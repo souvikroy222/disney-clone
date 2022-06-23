@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { HomeIcon, StarIcon, PlusIcon } from "@heroicons/react/solid";
-import { useSession, signIn, signOut } from "next-auth/react"
+import { signIn } from "next-auth/client";
 
 const Header = () => {
   return (
@@ -33,7 +33,10 @@ const Header = () => {
           <span className="span">Series</span>
         </a>
       </div>
-      <button className="ml-auto border px-4 py-1.5 rounded font-medium uppercase tracking-wide hover:bg-white hover:text-black transition duration-200" onClick={signIn}>
+      <button
+        className="ml-auto border px-4 py-1.5 rounded font-medium uppercase tracking-wide hover:bg-white hover:text-black transition duration-200"
+        onClick={signIn}
+      >
         Login
       </button>
     </div>
